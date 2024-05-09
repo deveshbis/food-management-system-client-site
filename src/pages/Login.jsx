@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import useAuth from "../Hooks/useAuth";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import SocialLogin from "./SocialLogin";
 
 
 const Login = () => {
@@ -61,6 +62,7 @@ const Login = () => {
                                 <button className="btn bg-[#BF4C41] text-white hover:bg-black">Login</button>
                             </div>
                         </form>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
