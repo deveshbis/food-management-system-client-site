@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 
 const NavBar = () => {
+    const { user, logoutUser } = useAuth();
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
