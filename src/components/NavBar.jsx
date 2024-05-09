@@ -29,7 +29,7 @@ const NavBar = () => {
         </>
     );
     return (
-        <div className="navbar bg-teal-600 dark:bg-gray-900 fixed w-full text-white z-20 top-0 start-0  border-gray-200 dark:border-gray-600 rounded-xl">
+        <div className="navbar bg-[#98042D] dark:bg-gray-900 fixed w-full text-white z-20 top-0 start-0  border-gray-200 dark:border-gray-600 rounded-xl">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden" onClick={toggleDropdown}>
