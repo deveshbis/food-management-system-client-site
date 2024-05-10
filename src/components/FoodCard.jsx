@@ -25,7 +25,7 @@ const FoodCard = ({ aCard }) => {
                         <div className="badge badge-outline">Expire: {expiredDateTime}</div>
                     </div>
                     <div className="card-actions justify-start">
-                        <Link to={`/singleCard/${_id}`}><button className="btn bg-[#BF4C41] text-white hover:bg-black" >View Property</button></Link>
+                        <Link to={`/food/${_id}`}><button className="btn bg-[#BF4C41] text-white hover:bg-black" >View Details</button></Link>
                     </div>
                 </div>
             </div>

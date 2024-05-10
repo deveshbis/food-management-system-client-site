@@ -6,6 +6,10 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import FoodDetails from "../pages/FoodDetails";
+import PrivateDetailsRoute from "../components/PrivateDetailsRoute";
+import AddFood from "../pages/AddFood";
+import AvailabeFood from "../pages/AvailabeFood";
 
 
 const router = createBrowserRouter([
@@ -17,6 +21,25 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+            },
+            {
+                path: '/food/:id',
+                element: <PrivateDetailsRoute>
+                    <FoodDetails></FoodDetails>
+                </PrivateDetailsRoute>,
+
+            },
+            {
+                path: "/addFood",
+                element: <PrivateDetailsRoute>
+                    <AddFood></AddFood>
+                </PrivateDetailsRoute>,
+            },
+            {
+                path: "/availableFoods",
+                element:<AvailabeFood></AvailabeFood>,
+                loader: ()=> fetch('http://localhost:5000/userData')
+                
             },
             {
                 path: "/login",
