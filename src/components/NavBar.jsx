@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import navBarLogo from '../assets/food.png';
 
 
 const NavBar = () => {
@@ -41,7 +42,8 @@ const NavBar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost lg:text-2xl md:texxl text-xs text-white animate__bounceInDown">Food Master</Link>
+                <Link to='/'><img src={navBarLogo} className="h-16"/></Link>
+                <Link to='/' className="btn btn-ghost lg:text-2xl md:texxl text-xs text-white">Food Master</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal flex gap-5 font-semibold text-[16px]">

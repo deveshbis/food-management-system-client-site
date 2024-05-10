@@ -16,7 +16,7 @@ const Banner = () => {
                 navigation={true}
                 modules={[Navigation]}
                 className="mySwiper rounded-2xl"
-                style={{ height: '40rem' }} 
+                style={{ height: '35rem' }} 
             >
                 <SwiperSlide><img src={bannerImg1} alt="Banner 1" className="w-full h-full object-cover" /></SwiperSlide>
                 <SwiperSlide><img src={bannerImg2} alt="Banner 2" className="w-full h-full object-cover" /></SwiperSlide>
