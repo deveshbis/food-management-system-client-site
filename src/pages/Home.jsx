@@ -13,7 +13,9 @@ const Home = () => {
                     throw new Error('Failed to fetch data');
                 }
                 const data = await response.json();
-                setFeaturedFoods(data);
+            
+                const sortedData = data.sort((a, b) => b.quantity - a.quantity);
+                setFeaturedFoods(sortedData);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -29,7 +31,10 @@ const Home = () => {
                 <h1 className="text-4xl text-center animate__bounceOut font-extrabold">Featured Foods </h1>
                 <p className="text-center pb-10">A selection of delicious dishes showcasing variety, quality, and flavor, catering to diverse tastes and preferences.</p>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 md:px-5 px-3 ">
-                    {featuredFoods.map(aCard => <FoodCard key={aCard._id} aCard={aCard}></FoodCard>)}
+                    {featuredFoods
+                    .map(aCard => 
+                    <FoodCard key={aCard._id} aCard={aCard}>
+                    </FoodCard>)}
                 </div>
             </div>
         </div>
