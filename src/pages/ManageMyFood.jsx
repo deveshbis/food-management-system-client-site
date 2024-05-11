@@ -60,7 +60,7 @@ const ManageMyFood = () => {
         <div className="mt-20">
             <div className="overflow-x-auto">
                 <table className="table">
-                    {/* head */}
+                    
                     <thead>
                         <tr className="text-3xl text-center font-bold">
                             <th>Image</th>
