@@ -8,9 +8,9 @@ const FoodCard = ({ aCard }) => {
         <div>
             <div className="card bg-base-100 shadow-xl border border-solid border-black space-y-2 p-2">
                 <div className="flex items-center space-x-4">
-                    <img alt="" src="https://source.unsplash.com/100x100/?portrait" className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                    <img alt="" src={donator.image} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                     <div className="flex flex-col space-y-1">
-                        <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">Leroy Jenkins</a>
+                        <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{donator.name}</a>
                     </div>
                 </div>
                 <figure><img src={foodImage} alt="Foods Loading" className='w-full h-[300px]' /></figure>

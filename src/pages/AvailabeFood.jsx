@@ -188,7 +188,7 @@ const AvailabeFood = () => {
                     <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 md:px-5 px-3 ">
                         {userData && userData.length > 0 ? (
                             userData.map((user, index) => (
-                                <div key={index} className="card w-96 bg-base-100">
+                                <div key={index} className="card bg-base-100">
                                     <div className="card bg-base-100 shadow-xl border border-solid border-black space-y-2 p-2 mt-5">
                                         <div className="flex items-center space-x-4">
                                             <img alt="" src="https://source.unsplash.com/100x100/?portrait" className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
@@ -208,7 +208,7 @@ const AvailabeFood = () => {
                                                 <div className="badge badge-outline">Expire: {user.expiredDate}</div>
                                             </div>
                                             <div className="card-actions justify-between items-center">
-                                                <Link to={`/food/${user._id}`}><button className="btn bg-[#BF4C41] text-white hover:bg-black">View Details</button></Link>
+                                                <Link to={`/availableFood/${user._id}`}><button className="btn bg-[#BF4C41] text-white hover:bg-black">View Details</button></Link>
                                                 <div className="badge badge-accent">Status: {user.foodStatus}</div>
                                             </div>
                                         </div>

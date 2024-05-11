@@ -12,6 +12,7 @@ import AddFood from "../pages/AddFood";
 import AvailabeFood from "../pages/AvailabeFood";
 import ManageMyFood from "../pages/ManageMyFood";
 import MyListCardUpdate from "../pages/MyListCardUpdate";
+import AvailableFoodViewDetails from "../pages/AvailableFoodViewDetails";
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,13 @@ const router = createBrowserRouter([
                 path: '/food/:id',
                 element: <PrivateDetailsRoute>
                     <FoodDetails></FoodDetails>
+                </PrivateDetailsRoute>,
+
+            },
+            {
+                path: '/availableFood/:id',
+                element: <PrivateDetailsRoute>
+                    <AvailableFoodViewDetails></AvailableFoodViewDetails>
                 </PrivateDetailsRoute>,
 
             },
