@@ -11,7 +11,7 @@ const ManageMyFood = () => {
     const [foodCard, setfoodCard] = useState(myFood);
 
     const { user, loading } = useAuth();
-    
+
 
     if (loading) {
         return <div className="flex justify-center items-center mt-48 mb-48">
@@ -59,7 +59,7 @@ const ManageMyFood = () => {
         <div className="mt-20 min-h-[calc(100vh-72px)]">
             <div className="overflow-x-auto">
                 <table className="table">
-                    
+
                     <thead>
                         <tr className="text-3xl text-center font-bold">
                             <th>Image</th>

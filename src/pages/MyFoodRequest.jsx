@@ -7,17 +7,7 @@ const MyFoodRequest = () => {
 
     const foodReq = useLoaderData()
     console.log(foodReq);
-    // const { id } = useParams();
-    // const [reqFood, setReqFood] = useState({});
-
-    // useEffect(() => {
-
-    //     fetch(`http://localhost:5000/foodRequest/${id}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setReqFood(data)
-    //         })
-    // }, [id]);
+    
     return (
         <div className="min-h-[calc(100vh-72px)] mt-20">
             <div className="overflow-x-auto">

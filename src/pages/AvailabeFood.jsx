@@ -148,7 +148,6 @@ const AvailabeFood = () => {
         setSearch(searchText);
         
     };
-    console.log(search);
 
     return (
         <div className="mt-20 min-h-[calc(100vh-72px)]">
