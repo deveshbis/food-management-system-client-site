@@ -64,7 +64,7 @@
 
 //     const fetchData = async () => {
 //         try {
-//             const response = await fetch(`http://localhost:5000/userData?sort=${sort}`);
+//             const response = await fetch(`https://food-master-murex.vercel.app/userData?sort=${sort}`);
 //             const data = await response.json();
 //             setUserData(data);
 //         } catch (error) {
@@ -136,7 +136,7 @@ const AvailabeFood = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const response = await fetch(`http://localhost:5000/userData?sort=${sort}&search=${search}`);
+            const response = await fetch(`https://food-master-murex.vercel.app/userData?sort=${sort}&search=${search}`);
             const data = await response.json();
             setUserData(data);
         };
@@ -151,7 +151,7 @@ const AvailabeFood = () => {
     console.log(search);
 
     return (
-        <div className="mt-20">
+        <div className="mt-20 min-h-[calc(100vh-72px)]">
             <div className="container px-6 py-10 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between">
                 <div>
                     <div className="flex flex-col md:flex-row justify-center items-center gap-5 ">

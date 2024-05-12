@@ -9,7 +9,7 @@ const Home = () => {
     useEffect(() => {
         const fetchFeaturedFoods = async () => {
             try {
-                const response = await fetch('http://localhost:5000/featuredFoods');
+                const response = await fetch('https://food-master-murex.vercel.app/featuredFoods');
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }

@@ -9,7 +9,7 @@ const FoodDetails = () => {
     const [details, setDetails] = useState({});
     useEffect(() => {
 
-        fetch(`http://localhost:5000/singleDetails/${id}`)
+        fetch(`https://food-master-murex.vercel.app/singleDetails/${id}`)
             .then(res => res.json())
             .then(data => {
                 setDetails(data)

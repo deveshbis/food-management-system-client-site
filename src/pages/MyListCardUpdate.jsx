@@ -8,7 +8,7 @@ const MyListCardUpdate = () => {
     const [update, setUpdate] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/updateData/${id}`)
+        fetch(`https://food-master-murex.vercel.app/updateData/${id}`)
             .then(res => res.json())
             .then(data => {
                 setUpdate(data);
@@ -27,7 +27,7 @@ const MyListCardUpdate = () => {
 
         const updateFood = { foodImage, foodName, foodQuantity, expiredDate };
 
-        fetch(`http://localhost:5000/updateData/${id}`, {
+        fetch(`https://food-master-murex.vercel.app/updateData/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

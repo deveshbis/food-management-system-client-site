@@ -9,7 +9,6 @@ import useAuth from "../Hooks/useAuth";
 const ManageMyFood = () => {
     const myFood = useLoaderData()
     const [foodCard, setfoodCard] = useState(myFood);
-    console.log(myFood);
 
     const { user, loading } = useAuth();
     
@@ -37,7 +36,7 @@ const ManageMyFood = () => {
 
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/deleteData/${_id}`, {
+                fetch(`https://food-master-murex.vercel.app/deleteData/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -57,7 +56,7 @@ const ManageMyFood = () => {
     }
 
     return (
-        <div className="mt-20">
+        <div className="mt-20 min-h-[calc(100vh-72px)]">
             <div className="overflow-x-auto">
                 <table className="table">
                     

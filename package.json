@@ -12,6 +12,7 @@
   "dependencies": {
     "@itseasy21/react-elastic-carousel": "^0.12.3",
     "firebase": "^10.11.1",
+    "framer-motion": "^11.1.9",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
     "prop-types": "^15.8.1",

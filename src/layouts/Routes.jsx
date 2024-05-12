@@ -13,6 +13,7 @@ import AvailabeFood from "../pages/AvailabeFood";
 import ManageMyFood from "../pages/ManageMyFood";
 import MyListCardUpdate from "../pages/MyListCardUpdate";
 import AvailableFoodViewDetails from "../pages/AvailableFoodViewDetails";
+import MyFoodRequest from "../pages/MyFoodRequest";
 
 
 const router = createBrowserRouter([
@@ -50,21 +51,26 @@ const router = createBrowserRouter([
                 element: <PrivateDetailsRoute>
                     <ManageMyFood></ManageMyFood>
                 </PrivateDetailsRoute>,
-                loader: () => fetch('http://localhost:5000/userData')
+                loader: () => fetch('https://food-master-murex.vercel.app/userData'),
             },
             {
                 path: '/myListCardUpdate/:id',
                 element: <PrivateDetailsRoute>
                     <MyListCardUpdate></MyListCardUpdate>
-                </PrivateDetailsRoute>
-
-                ,
+                </PrivateDetailsRoute>,
+            },
+            {
+                path: '/myFoodRequest',
+                element: <PrivateDetailsRoute>
+                    <MyFoodRequest></MyFoodRequest>
+                </PrivateDetailsRoute>,
+                loader: () => fetch('http://localhost:5000/reqData'),
 
             },
             {
                 path: "/availableFoods",
                 element: <AvailabeFood></AvailabeFood>,
-                loader: () => fetch('http://localhost:5000/userData')
+                loader: () => fetch('https://food-master-murex.vercel.app/userData')
 
             },
 
