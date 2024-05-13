@@ -7,8 +7,6 @@ const AvailableFoodViewDetails = () => {
     const { id } = useParams();
     const [details, setDetails] = useState({});
    
-
-    
     useEffect(() => {
 
         fetch(`https://food-master-murex.vercel.app/availableSingleFoodDetails/${id}`)

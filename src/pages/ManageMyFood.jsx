@@ -109,29 +109,27 @@
 
 
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Link, Navigate} from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../Hooks/useAuth";
 import axios from "axios";
+import { useQuery, } from "@tanstack/react-query";
 
 
 const ManageMyFood = () => {
-    // const myFood = useLoaderData()
-    // const [foodCard, setfoodCard] = useState(myFood);
 
     const { user, loading } = useAuth();
-    const [foodCard, setFoodCard] = useState([])
+    const { data: foodCard = [], isLoading } = useQuery({
+        queryFn: () => getData(),
+        queryKey: ['manageMyFood'],
+      })
 
-    useEffect(() => {
-        getData()
-      }, [user])
-    
       const getData = async () => {
         const { data } = await axios(`http://localhost:5000/userData`)
-        setFoodCard(data)
+        return data;
       }
 
 
@@ -145,10 +143,7 @@ const ManageMyFood = () => {
         return <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
     }
 
-
-    
-  
-
+    if (isLoading) return <p>Data is still loading......</p>
 
     const handleDelete = _id => {
         console.log(_id);
@@ -175,7 +170,8 @@ const ManageMyFood = () => {
                                 icon: "success"
                             });
                             const remainingCard = foodCard.filter(card => card._id !== _id)
-                            setFoodCard(remainingCard)
+                            // setFoodCard(remainingCard)
+                            return remainingCard;
                         }
                     })
             }

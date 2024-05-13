@@ -1,34 +1,48 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AvailableFoodCard from "../components/AvailableFoodCard";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 const AvailabeFood = () => {
 
-    const [cards, setCards] = useState([]);
+    // const [cards, setCards] = useState([]);
     const [sort, setSort] = useState('');
     const [searchText, setSearchText] = useState('');
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(`https://food-master-murex.vercel.app/userData?sort=${sort}&search=${searchText}`);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                setCards(data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, [ sort, searchText]);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await fetch(`https://food-master-murex.vercel.app/userData?sort=${sort}&search=${searchText}`);
+    //             if (!response.ok) {
+    //                 throw new Error('Network response was not ok');
+    //             }
+    //             const data = await response.json();
+    //             setCards(data);
+    //         } catch (error) {
+    //             console.error('Error fetching data:', error);
+    //         }
+    //     };
+    //     fetchData();
+    // }, [ sort, searchText]);
 
     
+
+
+    const { data: cards = [], isLoading } = useQuery({
+        queryFn: () => fetchData(),
+        queryKey: ['manageMyFood'],
+      })
+
+      const fetchData = async () => {
+        const { data } = await axios(`https://food-master-murex.vercel.app/userData?sort=${sort}&search=${searchText}`)
+        return data;
+      }
 
     const handleSearch = e => {
         e.preventDefault();
         setSearchText(e.target.value);
     };
 
+    if (isLoading) return <p>Data is still loading......</p>
     return (
         <div className='container px-6 py-10 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between mt-20'>
             <div>

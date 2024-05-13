@@ -7,8 +7,6 @@ import useAuth from "../Hooks/useAuth";
 const MyFoodRequest = () => {
 
     const foodReq = useLoaderData()
-    console.log(foodReq);
-
     const { user, loading } = useAuth();
 
     if (loading) {
