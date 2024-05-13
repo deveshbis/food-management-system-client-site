@@ -3,6 +3,8 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { createUserWithEmailAndPassword } from "firebase/auth/web-extension";
 import auth from "./firebase.config";
+import axios from "axios";
+
 
 export const AuthContext = createContext(null);
 
@@ -43,13 +45,26 @@ const FirebaseProvider = ({ children }) => {
     }
 
 
-    const logoutUser = () => {
-        setLoading(true);
+    // const logoutUser = async () => {
+    //     setLoading(true);
+    //     const { data } = await axios('http://localhost:5173/logout', {
+    //       withCredentials: true,
+    //     })
+    //     console.log(data)
+    //     setUser(null);
+    //     return signOut(auth)
+        
+    //   }
+    const logoutUser = async () => {
+        setLoading(true)
+        const { data } = await axios(`http://localhost:5000/logout`, {
+          withCredentials: true,
+        })
+        console.log(data)
         setUser(null);
-        signOut(auth);
-        setReload(prevState => !prevState);
+        return signOut(auth)
+      }
 
-    }
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (user) => {

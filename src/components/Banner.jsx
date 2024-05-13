@@ -18,10 +18,10 @@ const Banner = () => {
                 className="mySwiper rounded-2xl"
                 style={{ height: '35rem' }} 
             >
-                <SwiperSlide><img src={bannerImg1} alt="Banner 1" className="w-full h-full object-cover" /></SwiperSlide>
-                <SwiperSlide><img src={bannerImg2} alt="Banner 2" className="w-full h-full object-cover" /></SwiperSlide>
-                <SwiperSlide><img src={bannerImg3} alt="Banner 3" className="w-full h-full object-cover" /></SwiperSlide>
-                <SwiperSlide><img src={bannerImg4} alt="Banner 4" className="w-full h-full object-cover" /></SwiperSlide>
+                <SwiperSlide><img src={bannerImg1} alt="Banner 1" className="w-full lg:h-full md:h-[600px] h-[400px] object-cover" /></SwiperSlide>
+                <SwiperSlide><img src={bannerImg2} alt="Banner 2" className="w-full lg:h-full md:h-[600px] h-[400px] object-cover" /></SwiperSlide>
+                <SwiperSlide><img src={bannerImg3} alt="Banner 3" className="w-full lg:h-full md:h-[600px] h-[400px] object-cover" /></SwiperSlide>
+                <SwiperSlide><img src={bannerImg4} alt="Banner 4" className="w-full lg:h-full md:h-[600px] h-[400px] object-cover" /></SwiperSlide>
             </Swiper>
 
         </div>

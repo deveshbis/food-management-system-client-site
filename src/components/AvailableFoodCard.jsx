@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-import { MdDateRange, MdProductionQuantityLimits } from "react-icons/md";
-import { CiLocationOn } from "react-icons/ci";
+import { CiLocationOn } from 'react-icons/ci';
+import { MdDateRange, MdProductionQuantityLimits } from 'react-icons/md';
+import { Link } from "react-router-dom";
 
-const FoodCard = ({ aCard }) => {
-    const { _id, foodName, quantity, pickupLocation, expiredDateTime, additionalNotes, foodImage, donator
-    } = aCard;
+const AvailableFoodCard = ({ card }) => {
+    const { _id, foodName, foodQuantity, pickupLocation, expiredDate, additionalNotes, foodImage } = card;
+
     return (
         <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
             <div className="flex items-center space-x-4 mb-3">
-                <img alt="" src={donator.image} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                <img alt="" src='' className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                 <div className="flex flex-col space-y-1">
-                    <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{donator.name}</a>
+                    <a rel="noopener noreferrer" href="#" className="text-sm font-semibold"></a>
                 </div>
             </div>
             <img className="object-cover object-center w-full h-56" src={foodImage} alt="avatar" />
@@ -26,7 +26,7 @@ const FoodCard = ({ aCard }) => {
 
                 <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
                     <MdDateRange />
-                    <h1 className="px-2 text-sm">{expiredDateTime}</h1>
+                    <h1 className="px-2 text-sm">{expiredDate}</h1>
                 </div>
 
                 <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
@@ -36,7 +36,7 @@ const FoodCard = ({ aCard }) => {
 
                 <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
                     <MdProductionQuantityLimits />
-                    <h1 className="px-2 text-sm">{quantity}</h1>
+                    <h1 className="px-2 text-sm">{foodQuantity}</h1>
                 </div>
                 <div className="card-actions justify-end mt-3 ">
                     <Link to={`/food/${_id}`}><button className="btn bg-[#0f0e0e] text-white hover:bg-black" >View Details</button></Link>
@@ -46,28 +46,16 @@ const FoodCard = ({ aCard }) => {
     );
 };
 
-FoodCard.propTypes = {
-    aCard: PropTypes.shape({
+AvailableFoodCard.propTypes = {
+    card: PropTypes.shape({
         _id: PropTypes.string.isRequired,
         foodName: PropTypes.string.isRequired,
-        quantity: PropTypes.number.isRequired,
+        foodQuantity: PropTypes.number.isRequired,
         pickupLocation: PropTypes.string.isRequired,
-        expiredDateTime: PropTypes.string.isRequired,
+        expiredDate: PropTypes.string.isRequired,
         additionalNotes: PropTypes.string.isRequired,
         foodImage: PropTypes.string.isRequired,
-        donator: PropTypes.arrayOf(PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            image: PropTypes.string.isRequired,
-        })).isRequired,
     }).isRequired,
 };
 
-export default FoodCard;
-
-
-
-
-
-
-
-
+export default AvailableFoodCard;

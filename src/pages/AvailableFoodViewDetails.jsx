@@ -36,7 +36,7 @@ const AvailableFoodViewDetails = () => {
         console.log(newFood);
 
         if (name && pickupLocation && expiredDate && additionalNotes) {
-            fetch(`http://localhost:5000/reqData`, {
+            fetch(`https://food-master-murex.vercel.app/reqData`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

@@ -1,14 +1,15 @@
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import useAuth from "../Hooks/useAuth";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 
 const Register = () => {
 
     const { createUser, updateUserProfile, setReload } = useAuth();
     const navigate = useNavigate();
-    const from = '/';
+    const from = '/' ;
 
     const {
         register,
@@ -16,21 +17,54 @@ const Register = () => {
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         const { email, password, image, fullName } = data;
-        createUser(email, password)
-            .then(() => {
-                toast.success("Registration successful!");
-                updateUserProfile(fullName, image)
-                    .then(() => {
-                        toast.success("Registration successful!");
-                        navigate(from, { replace: true });
-                        setReload(true)
-                    })
-            }).catch(error => {
-                toast.error(`Failed to register: ${error.message}`);
-            });
+        try {
+            await createUser(email, password);
+            toast.success("Registration successful!");
+
+            // Update user profile
+            const result = await updateUserProfile(fullName, image);
+            console.log(result.user)
+
+            const { data } = await axios.post(
+                `http://localhost:5000/jwt`,
+                {
+                    email: result?.user?.email,
+                },
+                { withCredentials: true }
+            )
+            console.log(data)
+            toast.success('Signin Successful')
+            navigate(from, { replace: true })
+            setReload(true)
+        } catch (err) {
+            console.log(err)
+            toast.error(err?.message)
+        }
     };
+
+
+
+
+
+
+
+    // const onSubmit = (data) => {
+    //     const { email, password, image, fullName } = data;
+    //     createUser(email, password)
+    //         .then(() => {
+    //             toast.success("Registration successful!");
+    //             updateUserProfile(fullName, image)
+    //                 .then(() => {
+    //                     toast.success("Registration successful!");
+    //                     navigate(from, { replace: true });
+    //                     setReload(true)
+    //                 })
+    //         }).catch(error => {
+    //             toast.error(`Failed to register: ${error.message}`);
+    //         });
+    // };
 
     const passwordValidation = {
         required: "Password is required",
@@ -46,7 +80,7 @@ const Register = () => {
 
     return (
         <div className='mt-20'>
-            <ToastContainer />
+            {/* <ToastContainer /> */}
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">

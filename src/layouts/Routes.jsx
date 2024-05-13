@@ -51,7 +51,7 @@ const router = createBrowserRouter([
                 element: <PrivateDetailsRoute>
                     <ManageMyFood></ManageMyFood>
                 </PrivateDetailsRoute>,
-                loader: () => fetch('https://food-master-murex.vercel.app/userData'),
+                // loader: () => fetch('https://food-master-murex.vercel.app/userData'),
             },
             {
                 path: '/myListCardUpdate/:id',
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
                 element: <PrivateDetailsRoute>
                     <MyFoodRequest></MyFoodRequest>
                 </PrivateDetailsRoute>,
-                loader: () => fetch('http://localhost:5000/reqData'),
+                loader: () => fetch('https://food-master-murex.vercel.app/reqData'),
 
             },
             {

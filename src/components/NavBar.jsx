@@ -66,7 +66,7 @@ const NavBar = () => {
                             )}
                         </div>
 
-                        <button onClick={logoutUser} className="btn btn-sm btn-ghost hover:bg-black font-semibold text-[16px]">Logout</button>
+                        <Link to='/login'><button onClick={logoutUser} className="btn btn-sm btn-ghost hover:bg-black font-semibold text-[16px]">Logout</button></Link>
 
                     </div>
                 ) : (

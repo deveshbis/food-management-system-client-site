@@ -1,5 +1,6 @@
 
-import { useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 
 
@@ -7,6 +8,18 @@ const MyFoodRequest = () => {
 
     const foodReq = useLoaderData()
     console.log(foodReq);
+
+    const { user, loading } = useAuth();
+
+    if (loading) {
+        return <div className="flex justify-center items-center mt-48 mb-48">
+            <span className="loading loading-infinity loading-lg"></span>
+        </div>
+    }
+
+    if (!user) {
+        return <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
+    }
     
     return (
         <div className="min-h-[calc(100vh-72px)] mt-20">
