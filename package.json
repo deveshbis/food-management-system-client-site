@@ -12,6 +12,7 @@
   "dependencies": {
     "@itseasy21/react-elastic-carousel": "^0.12.3",
     "@tanstack/react-query": "^5.36.0",
+    "@tanstack/react-query-devtools": "^5.36.0",
     "axios": "^1.6.8",
     "firebase": "^10.11.1",
     "framer-motion": "^11.1.9",
