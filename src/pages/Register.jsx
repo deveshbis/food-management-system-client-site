@@ -17,54 +17,54 @@ const Register = () => {
         formState: { errors },
     } = useForm()
 
-    const onSubmit = async (data) => {
-        const { email, password, image, fullName } = data;
-        try {
-            await createUser(email, password);
-            toast.success("Registration successful!");
-
-            // Update user profile
-            const result = await updateUserProfile(fullName, image);
-            console.log(result.user)
-
-            const { data } = await axios.post(
-                `http://localhost:5000/jwt`,
-                {
-                    email: result?.user?.email,
-                },
-                { withCredentials: true }
-            )
-            console.log(data)
-            toast.success('Signin Successful')
-            navigate(from, { replace: true })
-            setReload(true)
-        } catch (err) {
-            console.log(err)
-            toast.error(err?.message)
-        }
-    };
-
-
-
-
-
-
-
-    // const onSubmit = (data) => {
+    // const onSubmit = async (data) => {
     //     const { email, password, image, fullName } = data;
-    //     createUser(email, password)
-    //         .then(() => {
-    //             toast.success("Registration successful!");
-    //             updateUserProfile(fullName, image)
-    //                 .then(() => {
-    //                     toast.success("Registration successful!");
-    //                     navigate(from, { replace: true });
-    //                     setReload(true)
-    //                 })
-    //         }).catch(error => {
-    //             toast.error(`Failed to register: ${error.message}`);
-    //         });
+    //     try {
+    //         await createUser(email, password);
+    //         toast.success("Registration successful!");
+
+    //         // Update user profile
+    //         const result = await updateUserProfile(fullName, image);
+    //         console.log(result.user)
+
+    //         const { data } = await axios.post(
+    //             `http://localhost:5000/jwt`,
+    //             {
+    //                 email: result?.user?.email,
+    //             },
+    //             { withCredentials: true }
+    //         )
+    //         console.log(data)
+    //         toast.success('Signin Successful')
+    //         navigate(from, { replace: true })
+    //         setReload(true)
+    //     } catch (err) {
+    //         console.log(err)
+    //         toast.error(err?.message)
+    //     }
     // };
+
+
+
+
+
+
+
+    const onSubmit = (data) => {
+        const { email, password, image, fullName } = data;
+        createUser(email, password)
+            .then(() => {
+                toast.success("Registration successful!");
+                updateUserProfile(fullName, image)
+                    .then(() => {
+                        toast.success("Registration successful!");
+                        navigate(from, { replace: true });
+                        setReload(true)
+                    })
+            }).catch(error => {
+                toast.error(`Failed to register: ${error.message}`);
+            });
+    };
 
     const passwordValidation = {
         required: "Password is required",

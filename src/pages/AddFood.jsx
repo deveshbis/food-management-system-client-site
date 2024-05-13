@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 
 
+
 const AddFood = () => {
     const { user, loading } = useAuth();
 
@@ -21,6 +22,8 @@ const AddFood = () => {
         event.preventDefault();
 
         const form = event.target;
+        // if (user?.email === postOwner?.email)
+        //     return toast.error('Action not permitted!')
 
         const foodImage = form.foodImage.value;
         const foodName = form.foodName.value;
@@ -29,17 +32,16 @@ const AddFood = () => {
         const expiredDate = form.expiredDate.value;
         const additionalNotes = form.additionalNotes.value;
         const foodStatus = 'available';
-
-        const email = user.email;
-
+        const email = form.email.value;
 
         const newFood = {
             foodImage, foodName, foodQuantity, pickupLocation, expiredDate, additionalNotes, foodStatus,
             postOwner: {
                 email,
                 name: user?.displayName,
-                donatorImage: user?.donatorImage,
+                photo: user?.photoURL,
             },
+
         }
 
         console.log(newFood);
@@ -197,6 +199,20 @@ const AddFood = () => {
                                     required
                                 />
                             </div>
+                            <div className="col-span-6 sm:col-span-3">
+                                <label className='text-gray-700 ' htmlFor='emailAddress'>
+                                    Email Address
+                                </label>
+                                <input
+                                    id='emailAddress'
+                                    type='email'
+                                    name='email'
+                                    disabled
+                                    defaultValue={user?.email}
+                                    className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
+                                />
+                            </div>
+
 
                             <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                                 <button
@@ -205,7 +221,7 @@ const AddFood = () => {
                                     Add Food
                                 </button>
 
-                                
+
                             </div>
 
                         </form>

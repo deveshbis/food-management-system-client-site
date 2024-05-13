@@ -4,14 +4,14 @@ import { MdDateRange, MdProductionQuantityLimits } from 'react-icons/md';
 import { Link } from "react-router-dom";
 
 const AvailableFoodCard = ({ card }) => {
-    const { _id, foodName, foodQuantity, pickupLocation, expiredDate, additionalNotes, foodImage } = card;
+    const { _id, foodName, foodQuantity, pickupLocation, expiredDate, additionalNotes, foodImage, postOwner } = card;
 
     return (
         <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
             <div className="flex items-center space-x-4 mb-3">
-                <img alt="" src='' className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                <img alt={postOwner.photo} src='' className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                 <div className="flex flex-col space-y-1">
-                    <a rel="noopener noreferrer" href="#" className="text-sm font-semibold"></a>
+                    <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{postOwner.name}</a>
                 </div>
             </div>
             <img className="object-cover object-center w-full h-56" src={foodImage} alt="avatar" />
@@ -39,7 +39,7 @@ const AvailableFoodCard = ({ card }) => {
                     <h1 className="px-2 text-sm">{foodQuantity}</h1>
                 </div>
                 <div className="card-actions justify-end mt-3 ">
-                    <Link to={`/food/${_id}`}><button className="btn bg-[#0f0e0e] text-white hover:bg-black" >View Details</button></Link>
+                    <Link to={`/availableFood/${_id}`}><button className="btn bg-[#0f0e0e] text-white hover:bg-black" >View Details</button></Link>
                 </div>
             </div>
         </div>

@@ -172,6 +172,7 @@ const ManageMyFood = () => {
                             const remainingCard = foodCard.filter(card => card._id !== _id)
                             // setFoodCard(remainingCard)
                             return remainingCard;
+                            
                         }
                     })
             }
