@@ -1,10 +1,16 @@
+import { motion } from 'framer-motion';
 
 
 const ContactUs = () => {
     return (
         <div>
+            <motion.div
+                initial={{ opacity: 0, x: -120 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 5 }}>
             <div className="max-w-screen-lg mx-auto p-5">
                 <div className="grid grid-cols-1 md:grid-cols-12 border">
+                    
                     <div className="bg-gray-900 md:col-span-4 p-10 text-white">
                         <p className="mt-4 text-sm leading-7 font-regular uppercase">
                             Contact
@@ -158,7 +164,7 @@ const ContactUs = () => {
 
                 </div>
             </div>
-
+            </motion.div>
         </div>
     );
 };

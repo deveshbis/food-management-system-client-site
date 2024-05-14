@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
-
+import { useParams } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 
 const FoodDetails = () => {
@@ -31,7 +31,13 @@ const FoodDetails = () => {
                             <h5 className="text-xl text-white">{details.pickupLocation}</h5>
                         </div>
                     </div>
-                    <img src={details.foodImage} alt="" className="w-full lg:h-[600px] mx-auto dark:bg-gray-500 rounded-lg shadow-md " />
+                    <motion.div
+                        initial={{ opacity: 0, scale: 5.2 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 5 }}>
+                        <img src={details.foodImage} alt="" className="w-full lg:h-[600px] mx-auto dark:bg-gray-500 rounded-lg shadow-md " />
+                    </motion.div>
+                    
                     <div className="mt-5">
                         <button className="btn btn-outline">Available</button>
                     </div>

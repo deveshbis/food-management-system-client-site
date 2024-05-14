@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { CiLocationOn } from 'react-icons/ci';
 import { MdDateRange, MdProductionQuantityLimits } from 'react-icons/md';
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 const AvailableFoodCard = ({ card }) => {
     const { _id, foodName, foodQuantity, pickupLocation, expiredDate, additionalNotes, foodImage, postOwner } = card;
@@ -14,7 +15,13 @@ const AvailableFoodCard = ({ card }) => {
                     <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{postOwner.name}</a>
                 </div>
             </div>
-            <img className="object-cover object-center w-full h-56" src={foodImage} alt="avatar" />
+
+            <motion.div
+                initial={{ opacity: 0, scale: 4.2 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 5 }}>
+                <img className="object-cover object-center w-full h-56" src={foodImage} alt="avatar" />
+            </motion.div>
 
             <div className="flex items-center px-6 py-3 bg-gray-900">
                 <h1 className="mx-3 text-lg font-semibold text-white">{foodName}</h1>
@@ -38,11 +45,16 @@ const AvailableFoodCard = ({ card }) => {
                     <MdProductionQuantityLimits />
                     <h1 className="px-2 text-sm">{foodQuantity}</h1>
                 </div>
-                <div className="card-actions justify-end mt-3 ">
-                    <Link to={`/availableFood/${_id}`}><button className="btn bg-[#0f0e0e] text-white hover:bg-black" >View Details</button></Link>
-                </div>
+                <motion.div
+                    initial={{ opacity: 0, x: 200 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 5 }}>
+                    <div className="card-actions justify-end mt-3 ">
+                        <Link to={`/availableFood/${_id}`}><button className="btn bg-[#0f0e0e] text-white hover:bg-black" >View Details</button></Link>
+                    </div>
+                </motion.div>
             </div>
-        </div>
+        </div >
     );
 };
 
