@@ -30,7 +30,7 @@ const NavBar = () => {
         </>
     );
     return (
-        <div className="navbar bg-[#98042D] dark:bg-gray-900 fixed w-full text-white z-20 top-0 start-0  border-gray-200 dark:border-gray-600 rounded-xl">
+        <div className="navbar bg-white dark:bg-gray-900 fixed w-full text-black z-20 top-0 start-0  border-gray-200 dark:border-gray-600 rounded-xl">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden" onClick={toggleDropdown}>
@@ -38,12 +38,12 @@ const NavBar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
                     </div>
-                    <ul tabIndex={0} className={`menu menu-sm dropdown-content mt-3 z-[1060] p-2 shadow text-white bg-black rounded-box w-52 ${dropdownOpen ? 'block' : 'hidden'}`}>
+                    <ul tabIndex={0} className={`menu menu-sm dropdown-content mt-3 z-[1060] p-2 shadow text-black bg-white rounded-box w-52 ${dropdownOpen ? 'block' : 'hidden'}`}>
                         {navLinks}
                     </ul>
                 </div>
                 <Link to='/'><img src={navBarLogo} className="h-16"/></Link>
-                <Link to='/' className="btn btn-ghost lg:text-2xl md:texxl text-xs text-white">Food Master</Link>
+                <Link to='/' className="btn btn-ghost lg:text-2xl md:texxl text-xs text-black">Food Master</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal flex gap-5 font-semibold text-[16px]">

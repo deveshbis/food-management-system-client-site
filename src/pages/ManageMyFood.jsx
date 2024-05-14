@@ -128,7 +128,7 @@ const ManageMyFood = () => {
       })
 
       const getData = async () => {
-        const { data } = await axios(`http://localhost:5000/userData`)
+        const { data } = await axios(`https://food-master-murex.vercel.app/userData`)
         return data;
       }
 

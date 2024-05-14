@@ -28,7 +28,7 @@ const Register = () => {
     //         console.log(result.user)
 
     //         const { data } = await axios.post(
-    //             `http://localhost:5000/jwt`,
+    //             `https://food-master-murex.vercel.app/jwt`,
     //             {
     //                 email: result?.user?.email,
     //             },

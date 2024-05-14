@@ -57,7 +57,7 @@ const FirebaseProvider = ({ children }) => {
     //   }
     const logoutUser = async () => {
         setLoading(true)
-        const { data } = await axios(`http://localhost:5000/logout`, {
+        const { data } = await axios(`https://food-master-murex.vercel.app/logout`, {
           withCredentials: true,
         })
         console.log(data)

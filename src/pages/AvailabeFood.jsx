@@ -2,52 +2,42 @@ import { useState } from "react";
 import AvailableFoodCard from "../components/AvailableFoodCard";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-const AvailabeFood = () => {
 
-    // const [cards, setCards] = useState([]);
+const AvailabeFood = () => {
     const [sort, setSort] = useState('');
     const [searchText, setSearchText] = useState('');
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await fetch(`https://food-master-murex.vercel.app/userData?sort=${sort}&search=${searchText}`);
-    //             if (!response.ok) {
-    //                 throw new Error('Network response was not ok');
-    //             }
-    //             const data = await response.json();
-    //             setCards(data);
-    //         } catch (error) {
-    //             console.error('Error fetching data:', error);
-    //         }
-    //     };
-    //     fetchData();
-    // }, [ sort, searchText]);
-
-    
-
+    const [searchClicked, setSearchClicked] = useState(false);
 
     const { data: cards = [], isLoading } = useQuery({
         queryFn: () => fetchData(),
         queryKey: ['manageMyFood'],
-      })
+    })
 
-      const fetchData = async () => {
+    const fetchData = async () => {
         const { data } = await axios(`https://food-master-murex.vercel.app/userData?sort=${sort}&search=${searchText}`)
         return data;
-      }
+    }
 
     const handleSearch = e => {
         e.preventDefault();
-        setSearchText(e.target.value);
+        setSearchClicked(true);
     };
 
+    let sortedCards = cards;
+    if (sort === 'asc') {
+        sortedCards = sortedCards.sort((a, b) => new Date(a.expiredDate) - new Date(b.expiredDate));
+    } else if (sort === 'dsc') {
+        sortedCards = sortedCards.sort((a, b) => new Date(b.expiredDate) - new Date(a.expiredDate));
+    }
+
+    const filteredCards = searchClicked && searchText ? sortedCards.filter(card => card.foodName.toLowerCase().includes(searchText.toLowerCase())) : sortedCards;
+
     if (isLoading) return <p>Data is still loading......</p>
+    
     return (
         <div className='container px-6 py-10 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between mt-20'>
             <div>
                 <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
-
                     <form onSubmit={handleSearch}>
                         <div className='flex p-1 overflow-hidden border rounded-lg    focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                             <input
@@ -57,9 +47,7 @@ const AvailabeFood = () => {
                                 value={searchText}
                                 name='search'
                                 placeholder='Enter Food Name'
-                                
                             />
-
                             <button className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
                                 Search
                             </button>
@@ -82,7 +70,7 @@ const AvailabeFood = () => {
                     </div>
                 </div>
                 <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3'>
-                    {cards.map(card => (
+                    {filteredCards.map(card => (
                         <AvailableFoodCard key={card._id} card={card} />
                     ))}
                 </div>

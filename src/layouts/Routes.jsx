@@ -38,6 +38,7 @@ const router = createBrowserRouter([
                 element: <PrivateDetailsRoute>
                     <AvailableFoodViewDetails></AvailableFoodViewDetails>
                 </PrivateDetailsRoute>,
+                // loader: ({params}) => fetch(`https://food-master-murex.vercel.app/userData/${params.id}`),
 
             },
             {
