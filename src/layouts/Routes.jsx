@@ -14,6 +14,7 @@ import ManageMyFood from "../pages/ManageMyFood";
 import MyListCardUpdate from "../pages/MyListCardUpdate";
 import AvailableFoodViewDetails from "../pages/AvailableFoodViewDetails";
 import MyFoodRequest from "../pages/MyFoodRequest";
+import LearnMore from "../components/LearnMore";
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
                 </PrivateDetailsRoute>,
                 // loader: ({params}) => fetch(`https://food-master-murex.vercel.app/userData/${params.id}`),
 
+            },
+            {
+                path: "/learnMore",
+                element: <LearnMore></LearnMore>,
+                
             },
             {
                 path: "/addFood",

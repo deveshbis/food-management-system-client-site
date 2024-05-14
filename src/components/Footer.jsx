@@ -12,8 +12,7 @@ const Footer = () => {
                         <h1 className="text-3xl">Food Master</h1>
 
                         <p className="mt-4 max-w-xs text-gray-500">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam
-                            molestias.
+                        Browse our diverse selection of fresh produce, pantry staples, and gourmet treats to elevate your culinary experience at home.
                         </p>
 
                         <ul className="mt-8 flex gap-6">

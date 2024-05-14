@@ -40,7 +40,7 @@ const Home = () => {
                             </FoodCard>)}
                 </div>
                 <div className='flex justify-center'>
-                    <Link to="/availableFoods"><button className="btn bg-[#BF4C41] text-white hover:bg-black" >Show All</button></Link>
+                    <Link to="/availableFoods"><button className="btn bg-black text-white hover:bg-black" >Show All</button></Link>
                 </div>
             </div>
             <Review></Review>

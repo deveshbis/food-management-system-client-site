@@ -30,7 +30,7 @@ const NavBar = () => {
         </>
     );
     return (
-        <div className="navbar bg-white dark:bg-gray-900 fixed w-full text-black z-20 top-0 start-0  border-gray-200 dark:border-gray-600 rounded-xl">
+        <div className="navbar  bg-white  dark:bg-gray-900 fixed w-full text-black z-20 top-0 start-0   dark:border-gray-600 rounded-xl shadow-lg">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden" onClick={toggleDropdown}>
@@ -66,11 +66,11 @@ const NavBar = () => {
                             )}
                         </div>
 
-                        <Link to='/login'><button onClick={logoutUser} className="btn btn-sm btn-ghost hover:bg-white font-semibold text-[16px]">Logout</button></Link>
+                        <Link to='/login'><button onClick={logoutUser} className="btn btn-sm btn-ghost border-black hover:bg-white font-semibold text-[16px]">Logout</button></Link>
 
                     </div>
                 ) : (
-                    <Link to='/login'><button className="text-white bg-black p-2 rounded-xl font-semibold text-[16px]">Login</button></Link>
+                    <Link to='/login'><button className="text-white bg-black p-2 border-black rounded-xl font-semibold text-[16px]">Login</button></Link>
                 )}
             </div>
         </div>

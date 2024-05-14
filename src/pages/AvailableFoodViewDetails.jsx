@@ -73,10 +73,10 @@ const AvailableFoodViewDetails = () => {
                             <p className='flex gap-3 mt-2 lg:mt-4 text-lg sm:mb-12'>
                             </p>
                         </div>
-                        <div className="bg-[#FCC0C5] text-white p-3 gap-2 rounded-xl">
-                            <h5 className="text-3xl text-black font-extrabold">{details.name ? details.name : ''}</h5>
+                        <div className="bg-black text-white p-3 gap-2 rounded-xl">
+                            <h5 className="text-3xl text-white  text-whitefont-extrabold">{details.name ? details.name : ''}</h5>
                             <hr />
-                            <h5 className="text-xl text-black">{details.pickupLocation}</h5>
+                            <h5 className="text-xl text-white">{details.pickupLocation}</h5>
                         </div>
                     </div>
                     <img src={details.foodImage} alt="" className="w-full lg:h-[600px] mx-auto dark:bg-gray-500 rounded-lg shadow-md " />
@@ -106,7 +106,7 @@ const AvailableFoodViewDetails = () => {
                     </div>
                 </div>
                 <div className='flex justify-center'>
-                    <button className="btn bg-[#BF4C41] text-white" onClick={() => document.getElementById('my_modal_5').showModal()}>Request</button>
+                    <button className="btn bg-black text-white" onClick={() => document.getElementById('my_modal_5').showModal()}>Request</button>
                     <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                         <div className="modal-box">
                             <div className="card bg-base-100 shadow-xl">
@@ -173,8 +173,8 @@ const AvailableFoodViewDetails = () => {
                                     </div>
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn bg-[#BF4C41] text-white hover:bg-black">Request</button>
-                                    <Link to='/availableFoods'><button onClick={() => handleDelete(details._id)} className="btn bg-[#BF4C41] text-white hover:bg-black">Close</button></Link>
+                                    <button className="btn bg-black text-white hover:bg-black">Request</button>
+                                    <Link to='/availableFoods'><button onClick={() => handleDelete(details._id)} className="btn bg-black text-white hover:bg-black">Close</button></Link>
                                 </div>
                             </form>
 

@@ -25,10 +25,10 @@ const FoodDetails = () => {
                             <p className='flex gap-3 mt-2 lg:mt-4 text-lg sm:mb-12'>
                             </p>
                         </div>
-                        <div className="bg-[#FCC0C5] text-white p-3 gap-2 rounded-xl">
-                            <h5 className="text-3xl text-black font-extrabold">{details.donator ? details.donator.name : ''}</h5>
+                        <div className="bg-black text-white p-3 gap-2 rounded-xl">
+                            <h5 className="text-3xl text-white font-extrabold">{details.donator ? details.donator.name : ''}</h5>
                             <hr />
-                            <h5 className="text-xl text-black">{details.pickupLocation}</h5>
+                            <h5 className="text-xl text-white">{details.pickupLocation}</h5>
                         </div>
                     </div>
                     <img src={details.foodImage} alt="" className="w-full lg:h-[600px] mx-auto dark:bg-gray-500 rounded-lg shadow-md " />
