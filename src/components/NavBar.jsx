@@ -62,11 +62,11 @@ const NavBar = () => {
                                 <img src={user?.photoURL || "https://i.ibb.co/d7Ppj2d/devesh-jpg.jpg"} className="w-10 rounded-full" alt="User Avatar" />
                             </label>
                             {isHovering && (
-                                <p className="absolute top-0 left-0 transform -translate-x-full bg-black shadow-lg rounded px-2 py-1">{user.displayName || 'Unknown User'}</p>
+                                <p className="absolute top-0 left-0 transform -translate-x-full bg-white shadow-lg rounded px-2 py-1">{user.displayName || 'Unknown User'}</p>
                             )}
                         </div>
 
-                        <Link to='/login'><button onClick={logoutUser} className="btn btn-sm btn-ghost hover:bg-black font-semibold text-[16px]">Logout</button></Link>
+                        <Link to='/login'><button onClick={logoutUser} className="btn btn-sm btn-ghost hover:bg-white font-semibold text-[16px]">Logout</button></Link>
 
                     </div>
                 ) : (

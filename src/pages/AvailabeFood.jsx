@@ -7,20 +7,25 @@ const AvailabeFood = () => {
     const [sort, setSort] = useState('');
     const [searchText, setSearchText] = useState('');
     const [searchClicked, setSearchClicked] = useState(false);
+    const [isTwoColumns, setIsTwoColumns] = useState(false); // Track current layout state
 
     const { data: cards = [], isLoading } = useQuery({
         queryFn: () => fetchData(),
         queryKey: ['manageMyFood'],
-    })
+    });
 
     const fetchData = async () => {
-        const { data } = await axios(`https://food-master-murex.vercel.app/userData?sort=${sort}&search=${searchText}`)
+        const { data } = await axios(`https://food-master-murex.vercel.app/userData?sort=${sort}&search=${searchText}`);
         return data;
-    }
+    };
 
     const handleSearch = e => {
         e.preventDefault();
         setSearchClicked(true);
+    };
+
+    const toggleLayout = () => {
+        setIsTwoColumns(prevState => !prevState); // Toggle layout state between true and false
     };
 
     let sortedCards = cards;
@@ -32,7 +37,7 @@ const AvailabeFood = () => {
 
     const filteredCards = searchClicked && searchText ? sortedCards.filter(card => card.foodName.toLowerCase().includes(searchText.toLowerCase())) : sortedCards;
 
-    if (isLoading) return <p>Data is still loading......</p>
+    if (isLoading) return <p>Data is still loading......</p>;
     
     return (
         <div className='container px-6 py-10 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between mt-20'>
@@ -68,19 +73,19 @@ const AvailabeFood = () => {
                             <option value='asc'>Ascending Order</option>
                         </select>
                     </div>
+                    <button onClick={toggleLayout} className='px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none'>
+                        {isTwoColumns ? "Change Layout" : "Change Layout"}
+                    </button>
                 </div>
-                <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3'>
+                <div className={`grid gap-8 mt-8 xl:mt-16 ${isTwoColumns ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
                     {filteredCards.map(card => (
                         <AvailableFoodCard key={card._id} card={card} />
                     ))}
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default AvailabeFood;
-
-
-
 
