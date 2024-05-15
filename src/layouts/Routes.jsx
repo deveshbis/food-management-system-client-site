@@ -71,7 +71,7 @@ const router = createBrowserRouter([
                 element: <PrivateDetailsRoute>
                     <MyFoodRequest></MyFoodRequest>
                 </PrivateDetailsRoute>,
-                loader: () => fetch('https://food-master-murex.vercel.app/reqData'),
+                // loader: () => fetch('https://food-master-murex.vercel.app/reqData'),
 
             },
             {

@@ -45,6 +45,7 @@ const AddFood = () => {
         }
 
         console.log(newFood);
+        
         fetch(`https://food-master-murex.vercel.app/userData`, {
             method: 'POST',
             headers: {

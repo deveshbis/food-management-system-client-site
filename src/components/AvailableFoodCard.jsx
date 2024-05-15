@@ -67,7 +67,12 @@ AvailableFoodCard.propTypes = {
         expiredDate: PropTypes.string.isRequired,
         additionalNotes: PropTypes.string.isRequired,
         foodImage: PropTypes.string.isRequired,
+        postOwner: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            photo: PropTypes.string.isRequired,
+        }).isRequired,
     }).isRequired,
 };
+
 
 export default AvailableFoodCard;

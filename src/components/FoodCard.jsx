@@ -33,7 +33,7 @@ const FoodCard = ({ aCard }) => {
 
                 <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
                     <MdDateRange />
-                    <h1 className="px-2 text-sm">{expiredDateTime}</h1>
+                    <h1 className="px-2 text-sm">{new Date(expiredDateTime).toLocaleDateString()}</h1>
                 </div>
 
                 <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">

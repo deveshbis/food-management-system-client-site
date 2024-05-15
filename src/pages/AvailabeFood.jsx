@@ -7,7 +7,7 @@ const AvailabeFood = () => {
     const [sort, setSort] = useState('');
     const [searchText, setSearchText] = useState('');
     const [searchClicked, setSearchClicked] = useState(false);
-    const [isTwoColumns, setIsTwoColumns] = useState(false); // Track current layout state
+    const [isTwoColumns, setIsTwoColumns] = useState(false);
 
     const { data: cards = [], isLoading } = useQuery({
         queryFn: () => fetchData(),
@@ -25,7 +25,7 @@ const AvailabeFood = () => {
     };
 
     const toggleLayout = () => {
-        setIsTwoColumns(prevState => !prevState); // Toggle layout state between true and false
+        setIsTwoColumns(prevState => !prevState); 
     };
 
     let sortedCards = cards;

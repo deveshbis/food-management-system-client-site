@@ -1,13 +1,24 @@
-
-import { Navigate, useLoaderData } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 
 
 const MyFoodRequest = () => {
 
-    const foodReq = useLoaderData()
     const { user, loading } = useAuth();
+    const { data: foodReq = [], isLoading } = useQuery({
+        queryFn: () => getData(),
+        queryKey: ['manageMyFood'],
+    })
+
+    const getData = async () => {
+        const { data } = await axios(`https://food-master-murex.vercel.app/reqData/${user?.email}`,
+            { withCredentials: true }
+        )
+        return data;
+    }
 
     if (loading) {
         return <div className="flex justify-center items-center mt-48 mb-48">
@@ -18,7 +29,10 @@ const MyFoodRequest = () => {
     if (!user) {
         return <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
     }
-    
+
+    if (isLoading) return <p>Data is still loading......</p>
+
+
     return (
         <div className="min-h-[calc(100vh-72px)] mt-20">
             <div className="overflow-x-auto">
@@ -26,8 +40,7 @@ const MyFoodRequest = () => {
                     {/* head */}
                     <thead>
                         <tr>
-
-                            <th> Donar Name</th>
+                            <th>Donar Name</th>
                             <th>Pickup Location</th>
                             <th>Expire Date</th>
                             <th>Request Date</th>
@@ -37,10 +50,10 @@ const MyFoodRequest = () => {
                         {foodReq.map((card) => (
                             <tr key={card._id}>
 
-                                <td>{card.name}</td>
+                                <td>{card.donerName}</td>
                                 <td>{card.pickupLocation}</td>
-                                <td>{card.expiredDate}</td>
-                                <td></td>
+                                <td>{card.expireDate}</td>
+                                <td>{card.reqDate}</td>
                             </tr>
                         ))}
                     </tbody>

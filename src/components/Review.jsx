@@ -10,8 +10,8 @@ const Review = () => {
 
                 <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
                     <motion.div
-                        initial={{ opacity: 0, rotate: -45 }} // Initial rotation angle
-                        animate={{ opacity: 1, rotate: 0 }} // Animate to the original rotation angle
+                        initial={{ opacity: 0, rotate: -45 }} 
+                        animate={{ opacity: 1, rotate: 0 }} 
                         transition={{ duration: 5 }}>
                         <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
                             <div className="flex items-center gap-4">
@@ -86,8 +86,8 @@ const Review = () => {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, rotate: 180 }} // Initial rotation angle
-                        animate={{ opacity: 1, rotate: 0 }} // Animate to the original rotation angle
+                        initial={{ opacity: 0, rotate: 180 }} 
+                        animate={{ opacity: 1, rotate: 0 }} 
                         transition={{ duration: 5 }}>
                         <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
                             <div className="flex items-center gap-4">
@@ -162,8 +162,8 @@ const Review = () => {
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, rotate: 45 }} // Initial rotation angle
-                        animate={{ opacity: 1, rotate: 0 }} // Animate to the original rotation angle
+                        initial={{ opacity: 0, rotate: 45 }} 
+                        animate={{ opacity: 1, rotate: 0 }}  
                         transition={{ duration: 5 }}>
                     <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
                         <div className="flex items-center gap-4">
