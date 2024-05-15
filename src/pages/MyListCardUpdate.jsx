@@ -44,8 +44,10 @@ const MyListCardUpdate = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     });
+                    
                 }
             });
+
     };
 
 
@@ -64,8 +66,6 @@ const MyListCardUpdate = () => {
                             <input
                                 type="text"
                                 name="foodImage"
-                                placeholder="Image url"
-                                // defaultValue={update.foodImage}
                                 defaultValue={update.foodImage}
                                 className="input input-bordered"
                                 required
@@ -80,8 +80,6 @@ const MyListCardUpdate = () => {
                                 <input
                                     type="text"
                                     name="foodName"
-                                    placeholder="Food Name"
-                                    // value={update.foodName}
                                     defaultValue={update.foodName}
                                     className="input input-bordered"
                                     required
@@ -94,8 +92,6 @@ const MyListCardUpdate = () => {
                                 <input
                                     type="number"
                                     name="foodQuantity"
-                                    placeholder="foodQuantity"
-                                    // value={update.foodQuantity}
                                     defaultValue={update.foodQuantity}
                                     className="input input-bordered"
                                     required
@@ -111,8 +107,6 @@ const MyListCardUpdate = () => {
                                 <input
                                     type="date"
                                     name="expiredDate"
-                                    placeholder=" Expired Date"
-                                    // value={update.expiredDate}
                                     defaultValue={update.expiredDate}
                                     className="input input-bordered"
                                     required

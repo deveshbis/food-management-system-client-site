@@ -1,4 +1,4 @@
-// import { useEffect, useState } from "react";
+
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Link, Navigate} from "react-router-dom";
@@ -22,6 +22,10 @@ const ManageMyFood = () => {
         )
         return data;
       }
+    //   const getData = async () => {
+    //     const { data } = await axios(`http://localhost:5000/userData`)
+    //     return data;
+    //   }
 
 
     if (loading) {
