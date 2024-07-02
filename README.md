@@ -8,6 +8,7 @@
 - **Authentication and Authorization:** Implements user authentication, registration, and private routes, ensuring secure access control for application parts.
 - **Dynamic Content Presentation:** Dynamically presents content with banners, featured foods, and interactive sections, enhancing user engagement.
 - **Data Management and CRUD Operations:** Allows users to create, update, delete food items, managing operations effectively with user feedback mechanisms
+---
 ### Technology Used:  
 - **Frontend:** React, Tailwind CSS
 - **Backend:** Node.js, Express.js
