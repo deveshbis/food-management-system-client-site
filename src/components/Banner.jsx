@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <div className='mt-20 px-2'>
+        <div className=''>
             <motion.div
                 initial={{ opacity: 0, x: -120 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 5 }}>
                 <section
-                    className="relative bg-[url(https://i.ibb.co/ggVD7sp/banner.jpg)] bg-cover bg-center bg-no-repeat"
+                    className="relative bg-[url(https://beyondtype1.org/wp-content/uploads/2023/01/FAST-FOOD-CHAIN-NUTRITION-GUIDE-HEADER.jpg)] bg-cover bg-center bg-no-repeat"
                 >
                     <div
                         className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
@@ -63,6 +63,8 @@ const Banner = () => {
 
 
         </div>
+
+        
 
     );
 };

@@ -110,26 +110,6 @@ const AvailableFoodViewDetails = () => {
         });
     };
 
-    // const handleDelete = _id => {
-    //     console.log(_id);
-    //     fetch(`https://food-master-murex.vercel.app/deleteData/${_id}`, {
-    //         method: 'DELETE'
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.deletedCount > 0) {
-
-    //                 if (Array.isArray(details)) {
-    //                     const remainingCards = details.filter(card => card._id !== _id);
-    //                     setDetails(remainingCards);
-    //                 }
-    //                 setIsOpen(false);
-    //             }
-    //         })
-    //         .catch(error => {
-    //             console.error('Error:', error);
-    //         });
-    // };
 
     return (
         <div className="mt-20">

@@ -14,7 +14,7 @@ const MyFoodRequest = () => {
     })
 
     const getData = async () => {
-        const { data } = await axios(`https://food-master-murex.vercel.app/reqData/${user?.email}`,
+        const { data } = await axios(`https://food-master-murex.vercel.app/reqData`,
             { withCredentials: true }
         )
         return data;

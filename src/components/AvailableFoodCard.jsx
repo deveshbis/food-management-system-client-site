@@ -6,13 +6,15 @@ import { motion } from 'framer-motion';
 
 const AvailableFoodCard = ({ card }) => {
     const { _id, foodName, foodQuantity, pickupLocation, expiredDate, additionalNotes, foodImage, postOwner } = card;
+    const postOwnerPhoto = postOwner ? postOwner.photo : "";
+    const postOwnerName = postOwner ? postOwner.name : "";
 
     return (
         <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
             <div className="flex items-center space-x-4 mb-3">
-                <img alt={postOwner.photo} src='' className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                <img alt={postOwnerPhoto} src='' className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                 <div className="flex flex-col space-y-1">
-                    <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{postOwner.name}</a>
+                    <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{postOwnerName}</a>
                 </div>
             </div>
 
