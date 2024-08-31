@@ -1,244 +1,147 @@
-import { motion } from 'framer-motion';
+
 
 const Review = () => {
     return (
-        <section className="bg-white">
-            <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-                <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                    Read trusted reviews from our customers
-                </h2>
+        <div className="mt-4 font-[sans-serif] p-2 max-md:max-w-lg mx-auto">
+           <div className="text-center max-w-3xl mx-auto">
+                <h2 className="text-3xl font-extrabold text-gray-800">Testimonials</h2>
+                <p className="text-sm text-gray-800 mt-4 leading-relaxed">Food, substance consisting essentially of protein, carbohydrate, fat, and other nutrients used in the body of an organism to sustain growth and vital processes and to furnish energy.</p>
+            </div>
 
-                <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
-                    <motion.div
-                        initial={{ opacity: 0, rotate: -45 }} 
-                        animate={{ opacity: 1, rotate: 0 }} 
-                        transition={{ duration: 5 }}>
-                        <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
-                            <div className="flex items-center gap-4">
-                                <img
-                                    alt=""
-                                    src="https://i.ibb.co/0sHf5Ys/Frank-Wilson.jpg"
-                                    className="size-14 rounded-full object-cover"
-                                />
-
-                                <div>
-                                    <div className="flex justify-center gap-0.5 text-green-500">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            />
-                                        </svg>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            />
-                                        </svg>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            />
-                                        </svg>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            />
-                                        </svg>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            />
-                                        </svg>
-                                    </div>
-
-                                    <p className="mt-0.5 text-lg font-medium text-gray-900">Ansoa Starr</p>
-                                </div>
-                            </div>
-
-                            <p className="mt-4 text-gray-700">
-                                Emily was delighted with her recent order from the food website, praising the impeccable quality of the grilled chicken salad and the swift delivery service. She expressed her newfound admiration for the spot, indicating it has become her top choice for ordering food online.
-                            </p>
-                        </blockquote>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, rotate: 180 }} 
-                        animate={{ opacity: 1, rotate: 0 }} 
-                        transition={{ duration: 5 }}>
-                        <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
-                            <div className="flex items-center gap-4">
-                                <img
-                                    alt=""
-                                    src="https://i.ibb.co/TM3bTKW/Bob-Smith.jpg"
-                                    className="size-14 rounded-full object-cover"
-                                />
-
-                                <div>
-                                    <div className="flex justify-center gap-0.5 text-green-500">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            />
-                                        </svg>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            />
-                                        </svg>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            />
-                                        </svg>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            />
-                                        </svg>
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="h-5 w-5"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                            />
-                                        </svg>
-                                    </div>
-
-                                    <p className="mt-0.5 text-lg font-medium text-gray-900">Paul Michael</p>
-                                </div>
-                            </div>
-
-                            <p className="mt-4 text-gray-700">
-                                Michael shared his positive experience with the food website, highlighting the diverse range of options available. He particularly enjoyed the freshness and flavor of the sushi rolls, which left a lasting impression on his taste buds.
-                            </p>
-                        </blockquote>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, rotate: 45 }} 
-                        animate={{ opacity: 1, rotate: 0 }}  
-                        transition={{ duration: 5 }}>
-                    <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
-                        <div className="flex items-center gap-4">
-                            <img
-                                alt=""
-                                src="https://i.ibb.co/hLWpq6p/Maria-Taylor.jpg"
-                                className="size-14 rounded-full object-cover"
-                            />
-
-                            <div>
-                                <div className="flex justify-center gap-0.5 text-green-500">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                        />
-                                    </svg>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                        />
-                                    </svg>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                        />
-                                    </svg>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                        />
-                                    </svg>
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-5 w-5"
-                                        viewBox="0 0 20 20"
-                                        fill="currentColor"
-                                    >
-                                        <path
-                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                        />
-                                    </svg>
-                                </div>
-
-                                <p className="mt-0.5 text-lg font-medium text-gray-900">Maria Taylor</p>
-                            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-md:justify-center mt-12">
+                <div className="border border-gray-300 lg:p-6 p-4 rounded-xl bg-white relative">
+                    <div className="flex items-center">
+                        <img src="https://readymadeui.com/team-1.webp" className="w-14 h-14 rounded-full shadow-xl border-2 border-white" />
+                        <div className="ml-4">
+                            <h4 className="text-gray-800 text-sm font-extrabold">John Doe</h4>
+                            <p className="text-xs text-[#ff0000] font-semibold mt-1">CEO, Company</p>
                         </div>
+                    </div>
 
-                        <p className="mt-4 text-gray-700">
-                            Sarah commended the exceptional customer service and delicious food offered by the food website. She found the online ordering process to be seamless and convenient, with her order arriving promptly as promised. Sarah enthusiastically recommended the website to others seeking a satisfying dining experience.
-                        </p>
-                    </blockquote>
-                    </motion.div>
+                    <hr className="rounded-full border-[3px] mt-6" />
+
+                    <div className="mt-6">
+                        <p className="text-gray-800 text-sm leading-relaxed"> Michael shared his positive experience with the food website, highlighting the diverse range of options available. He particularly enjoyed the freshness and flavor of the sushi rolls, which left a lasting impression on his taste buds.</p>
+                    </div>
+
+                    <div className="flex space-x-1 mt-4">
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div className="border border-gray-300 lg:p-6 p-4 rounded-xl bg-white relative">
+                    <div className="flex items-center">
+                        <img src="https://readymadeui.com/team-2.webp" className="w-14 h-14 rounded-full shadow-xl border-2 border-white" />
+                        <div className="ml-4">
+                            <h4 className="text-gray-800 text-sm font-extrabold">Mark Adair</h4>
+                            <p className="text-xs text-[#ff0000] font-semibold mt-1">CEO, Company</p>
+                        </div>
+                    </div>
+
+                    <hr className="rounded-full border-[3px] mt-6" />
+
+                    <div className="mt-6">
+                        <p className="text-gray-800 text-sm leading-relaxed"> Mark was delighted with her recent order from the food website, praising the impeccable quality of the grilled chicken salad and the swift delivery service. She expressed her newfound admiration for the spot, indicating it has become her top choice for ordering food online.</p>
+                    </div>
+
+                    <div className="flex space-x-1 mt-4">
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div className="border border-gray-300 lg:p-6 p-4 rounded-xl bg-white relative">
+                    <div className="flex items-center">
+                        <img src="https://readymadeui.com/team-3.webp" className="w-14 h-14 rounded-full shadow-xl border-2 border-white" />
+                        <div className="ml-4">
+                            <h4 className="text-gray-800 text-sm font-extrabold">Simon Konecki</h4>
+                            <p className="text-xs text-[#ff0000] font-semibold mt-1">COO, Company</p>
+                        </div>
+                    </div>
+
+                    <hr className="rounded-full border-[3px] mt-6" />
+
+                    <div className="mt-6">
+                        <p className="text-gray-800 text-sm leading-relaxed"> Simon commended the exceptional customer service and delicious food offered by the food website. She found the online ordering process to be seamless and convenient, with her order arriving promptly as promised. Sarah enthusiastically recommended the website to others seeking a satisfying dining experience.</p>
+                    </div>
+
+                    <div className="flex space-x-1 mt-4">
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#ff0000]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                        <svg className="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                        </svg>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 
