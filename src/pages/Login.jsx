@@ -32,37 +32,57 @@ const Login = () => {
             });
     }
     return (
-        <div className='mt-20'>
+        <div className="mt-20">
             <ToastContainer></ToastContainer>
-            <div className="hero min-h-screen ">
-                <div className="hero-content flex-col ">
-                    <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                    </div>
-                    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" placeholder="email" className="input input-bordered" {...register("email", { required: true })} />
-                                {errors.email && <span className="text-red-500">This field is required</span>}
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="password" placeholder="password" className="input input-bordered" {...register("password", { required: true })} />
-                                {errors.password && <span className="text-red-500">This field is required</span>}
-                                <label className="mt-5">
-                                    <Link to='/register' className="flex justify-between items-center">Do not have an account?  <span className="label hover:underline text-blue-700">Register Now</span></Link>
-                                </label>
-                            </div>
-                            <div className="form-control mt-6">
-                                <button className="btn bg-[#BF4C41] text-white hover:bg-black">Login</button>
-                            </div>
-                        </form>
-                        <SocialLogin></SocialLogin>
+            <div className="font-[sans-serif]">
+                <div className="min-h-screen flex fle-col items-center justify-center py-6 px-4">
+                    <div className="grid md:grid-cols-2 items-center gap-4 max-w-6xl w-full">
+                        <div className="border border-gray-300 rounded-lg p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] max-md:mx-auto">
+                            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                                <div className="mb-8">
+                                    <h3 className="text-gray-800 text-3xl font-extrabold">Sign in</h3>
+                                    <p className="text-gray-500 text-sm mt-4 leading-relaxed">Sign in to your account and explore a world of possibilities. Your journey begins here.</p>
+                                </div>
+
+                                <div>
+                                    <label className="text-gray-800 text-sm mb-2 block">User name</label>
+                                    <div className="relative flex items-center">
+                                        <input type="email" placeholder="email" required className="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-blue-600" {...register("email", { required: true })} />
+                                        {errors.email && <span className="text-red-500">This field is required</span>}
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-4" viewBox="0 0 24 24">
+                                            <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
+                                            <path d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z" data-original="#000000"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label className="text-gray-800 text-sm mb-2 block">Password</label>
+                                    <div className="relative flex items-center">
+                                        <input type="password" placeholder="password" required className="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-blue-600" {...register("password", { required: true })} />
+                                        {errors.password && <span className="text-red-500">This field is required</span>}
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-4 cursor-pointer" viewBox="0 0 128 128">
+                                            <path d="M64 104C22.127 104 1.367 67.496.504 65.943a4 4 0 0 1 0-3.887C1.367 60.504 22.127 24 64 24s62.633 36.504 63.496 38.057a4 4 0 0 1 0 3.887C126.633 67.496 105.873 104 64 104zM8.707 63.994C13.465 71.205 32.146 96 64 96c31.955 0 50.553-24.775 55.293-31.994C114.535 56.795 95.854 32 64 32 32.045 32 13.447 56.775 8.707 63.994zM64 88c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm0-40c-8.822 0-16 7.178-16 16s7.178 16 16 16 16-7.178 16-16-7.178-16-16-16z" data-original="#000000"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                
+                                <div className="!mt-8">
+                                    <button type="button" className="w-full shadow-xl py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">
+                                        Log in
+                                    </button>
+                                </div>
+
+                                <p className="text-sm !mt-8 text-center text-gray-800">Don't have an account <Link to='/register' className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</Link></p>
+
+                            </form>
+                            <SocialLogin></SocialLogin>
+                        </div>
+                        <div className="lg:h-[400px] md:h-[300px] max-md:mt-8">
+                            <img src="https://readymadeui.com/login-image.webp" className="w-full h-full max-md:w-4/5 mx-auto block object-cover" alt="Dining Experience" />
+                        </div>
+                        
                     </div>
                 </div>
             </div>

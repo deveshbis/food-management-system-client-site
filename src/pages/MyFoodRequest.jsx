@@ -6,19 +6,19 @@ import axios from "axios";
 
 
 const MyFoodRequest = () => {
-
     const { user, loading } = useAuth();
-    const { data: foodReq = [], isLoading } = useQuery({
+    const { data: foodReq = [] } = useQuery({
         queryFn: () => getData(),
         queryKey: ['manageMyFood'],
     })
 
     const getData = async () => {
-        const { data } = await axios(`https://food-master-murex.vercel.app/reqData`,
+        const { data } = await axios(`http://localhost:5000/reqData/${user?.email}`,
             { withCredentials: true }
         )
         return data;
     }
+    
 
     if (loading) {
         return <div className="flex justify-center items-center mt-48 mb-48">
@@ -30,7 +30,7 @@ const MyFoodRequest = () => {
         return <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
     }
 
-    if (isLoading) return <p>Data is still loading......</p>
+    
 
 
     return (

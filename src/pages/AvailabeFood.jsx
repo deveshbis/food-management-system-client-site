@@ -25,7 +25,7 @@ const AvailabeFood = () => {
     };
 
     const toggleLayout = () => {
-        setIsTwoColumns(prevState => !prevState); 
+        setIsTwoColumns(prevState => !prevState);
     };
 
     let sortedCards = cards;
@@ -38,7 +38,7 @@ const AvailabeFood = () => {
     const filteredCards = searchClicked && searchText ? sortedCards.filter(card => card.foodName.toLowerCase().includes(searchText.toLowerCase())) : sortedCards;
 
     if (isLoading) return <p>Data is still loading......</p>;
-    
+
     return (
         <div className='container px-6 py-10 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between mt-20'>
             <div>
@@ -84,6 +84,7 @@ const AvailabeFood = () => {
                 </div>
             </div>
         </div>
+        
     );
 };
 
