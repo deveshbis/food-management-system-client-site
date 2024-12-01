@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { MdDateRange, MdProductionQuantityLimits } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
 
+// eslint-disable-next-line react/prop-types
 const FoodCard = ({ aCard }) => {
     const { _id, foodName, quantity, pickupLocation, expiredDateTime, additionalNotes, foodImage, donator
     } = aCard;
@@ -55,21 +57,21 @@ const FoodCard = ({ aCard }) => {
     );
 };
 
-FoodCard.propTypes = {
-    aCard: PropTypes.shape({
-        _id: PropTypes.string.isRequired,
-        foodName: PropTypes.string.isRequired,
-        quantity: PropTypes.number.isRequired,
-        pickupLocation: PropTypes.string.isRequired,
-        expiredDateTime: PropTypes.string.isRequired,
-        additionalNotes: PropTypes.string.isRequired,
-        foodImage: PropTypes.string.isRequired,
-        donator: PropTypes.arrayOf(PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            image: PropTypes.string.isRequired,
-        })).isRequired,
-    }).isRequired,
-};
+// FoodCard.propTypes = {
+//     aCard: PropTypes.shape({
+//         _id: PropTypes.string.isRequired,
+//         foodName: PropTypes.string.isRequired,
+//         quantity: PropTypes.number.isRequired,
+//         pickupLocation: PropTypes.string.isRequired,
+//         expiredDateTime: PropTypes.string.isRequired,
+//         additionalNotes: PropTypes.string.isRequired,
+//         foodImage: PropTypes.string.isRequired,
+//         donator: PropTypes.arrayOf(PropTypes.shape({
+//             name: PropTypes.string.isRequired,
+//             image: PropTypes.string.isRequired,
+//         })).isRequired,
+//     }).isRequired,
+// };
 
 export default FoodCard;
 
