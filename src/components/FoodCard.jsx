@@ -6,22 +6,13 @@ import { CiLocationOn } from "react-icons/ci";
 
 // eslint-disable-next-line react/prop-types
 const FoodCard = ({ aCard }) => {
-    const { _id, foodName, quantity, pickupLocation, expiredDateTime, additionalNotes, foodImage, donator
+    const { _id, foodName, quantity, pickupLocation, expiredDateTime, additionalNotes, foodImage,
     } = aCard;
     return (
         <div className="font-sans p-4 mx-auto xl:w-full lg:max-w-5xl md:max-w-3xl max-w-md">
             <div className="bg-gray-100 p-2 overflow-hidden cursor-pointer">
                 <div className="bg-white flex flex-col h-full">
-                    <div className="flex items-center space-x-4 mb-3">
-                        <img alt="" src={donator.image} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
-                        <div className="flex flex-col space-y-1">
-                            <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{donator.name}</a>
-                        </div>
-                    </div>
                     <img className="object-cover object-center w-full h-56" src={foodImage} alt="avatar" />
-
-
-
                     <div className="flex items-center px-6 py-3 bg-gray-900">
                         <h1 className="mx-3 text-lg font-semibold text-white">{foodName}</h1>
                     </div>
